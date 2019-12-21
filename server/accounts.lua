@@ -60,6 +60,8 @@ function OnAccountLoad(player)
     SetPlayerLocation(player, 125773.0, 80246.0, 1645.0)
     SetPlayerFacingAngle(player, 90.0)
     ]]--
+    SetPlayerRespawnTime(player, 0)
+    SetPlayerHealth(player, 0)
 end
 
 function SaveAccount(player)

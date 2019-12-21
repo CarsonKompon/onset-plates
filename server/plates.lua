@@ -102,7 +102,7 @@ function ResetPlate(player)
 end
 
 function DestroyPlate(player)
-    DestroyObject(PlayerData[player].plate)
-    DestroyText3D(PlayerData[player].plateText)
+    if(PlayerData[player].plate ~= nil) then DestroyObject(PlayerData[player].plate) end
+    if(PlayerData[player].plateText ~= nil) then DestroyText3D(PlayerData[player].plateText) end
     ResetPlate(player)
 end

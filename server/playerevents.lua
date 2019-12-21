@@ -84,6 +84,9 @@ function OnPlayerSpawn(player)
     end
     PlayerData[player].blind = 0
     if (PlayerData[player].hat ~= nil) and (PlayerData[player].hat > 0) then SetPlayerHat(player) end
+    
+    SetPlayerRespawnTime(player, 1500)
+
     CallRemoteEvent(player, "plates:ChangeCam", false)
     --[[
     CallRemoteEvent(player, "player:SetPlayerModel", PlayerData[player].playermodel)
@@ -109,6 +112,7 @@ function OnPlayerDeath(player, killer)
         end
     end
     if(torem ~= nil) then table.remove(gamemode.ingame, torem) end
+    
     DestroyPlate(player)
 
     PlayerData[player].deaths = PlayerData[player].deaths + 1

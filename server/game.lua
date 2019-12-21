@@ -152,22 +152,24 @@ function GameTimer()
 end
 
 function CheckGameOver()
-    local count = 0
-    for _, v in pairs(gamemode.ingame) do
-        if(v ~= nil) then
-            count = count + 1
+    if(gamemode.gameState ~= "WAITING") and (gamemode.gameState ~= "INTERMISSION") and (gamemode.gameState ~= "STARTING") then
+        local count = 0
+        for _, v in pairs(gamemode.ingame) do
+            if(v ~= nil) then
+                count = count + 1
+            end
         end
-    end
-    if count <= 1 then
-        gamemode.ingame = {}
-        gamemode.gameStart = false
-        gamemode.gameState = "INTERMISSION"
-        gamemode.currentTimer = 0
+        if count <= 1 then
+            gamemode.ingame = {}
+            gamemode.gameStart = false
+            gamemode.gameState = "INTERMISSION"
+            gamemode.currentTimer = 0
 
-        for _, v in pairs(GetAllPlayers()) do
-            CallRemoteEvent(v, "PlayMusicFile", "gameend.mp3", 0)
+            for _, v in pairs(GetAllPlayers()) do
+                CallRemoteEvent(v, "PlayMusicFile", "gameend.mp3", 0)
+            end
+
+            CallEvent("OnPlateGameEnd")
         end
-
-        CallEvent("OnPlateGameEnd")
     end
 end
