@@ -41,7 +41,10 @@ So an example of a valid string would be:
 ```lua
 " Plate(s) will receive a spinning death bar in "
 ```
-Which would display as `"2 Plate(s) will receive a spinning death bar in 3..."`
+Which would display as
+```
+2 Plate(s) will receive a spinning death bar in 3...
+```
 
 Finally, you can program what your effect will do back in `server\effects.lua` towards the bottom of `function EffectPlate(player, command)`
 ```lua
@@ -53,8 +56,8 @@ end
 NOTE: `commandNumber` is equal to the event's position in the `events[commandType]` table (Where `commandType` is 1 for Plate/Player Events and 2 for Game Events)
 You can test your event in-game with `/effect <commandNumber>`
 
-NOTE: If you're going to create any Objects, NPCs, or Pickups make sure they get cleaned up where they need to be cleaned up so no additional errors are caused.
-Some common cleanup locations are:
+**NOTE: If you're going to create any Objects, NPCs, or Pickups make sure they get cleaned up where they need to be cleaned up so no additional errors are caused.
+Some common cleanup locations are:**
 - `OnPlayerQuit` in `server\playerevents.lua`
 - `OnPlayerDeath` in `server\playerevents.lua`
 - `CheckGameOver` in `server\game.lua` (Ends game)
