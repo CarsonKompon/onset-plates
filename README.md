@@ -1,7 +1,9 @@
 # Onset Plates Gamemode
 Plates Gamemode by Carson K. for the game [Onset](https://store.steampowered.com/app/1105810/Onset/)
 
-![image](/screenshots/in-game.png)
+https://www.youtube.com/watch?v=vWBPih-tpes
+
+[![IMAGE ALT TEXT](/screenshots/in-game.png)](https://www.youtube.com/watch?v=vWBPih-tpes)
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
@@ -60,7 +62,11 @@ end
 NOTE: `commandNumber` is equal to the event's position in the `events[commandType]` table (Where `commandType` is 1 for Plate/Player Events and 2 for Game Events)
 You can test your event in-game with `/effect <commandNumber>`
 
-**NOTE: If you're going to create any Objects, NPCs, or Pickups make sure they get cleaned up where they need to be cleaned up so no additional errors are caused.
+
+
+## Additional Notes
+
+**If you're going to create any Objects, NPCs, or Pickups make sure they get cleaned up where they need to be cleaned up so no additional errors are caused.
 Some common cleanup locations are:**
 - `OnPlayerQuit` in `server\playerevents.lua`
 - `OnPlayerDeath` in `server\playerevents.lua`
