@@ -20,7 +20,7 @@ function OnAccountLoad(player)
         PlayerData[player].joindate = os.time()
         PlayerData[player].join_ip = GetPlayerIP(player)
         PlayerData[player].hat = 0
-        PlayerData[player].playermodel = "SkeletalMesh/BodyMerged/HZN_CH3D_Normal01_LPR"
+        PlayerData[player].playermodel = 1
         PlayerData[player].clothingShirt = "Clothing/Meshes/SK_Undershirt01"
         PlayerData[player].clothingPants = "Clothing/Meshes/SK_Shorts01"
     else

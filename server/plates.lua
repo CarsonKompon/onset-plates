@@ -25,6 +25,8 @@ function SpawnPlates()
         SetPlayerLocation(v, startPosX + (1250 * i), startPosY + (1250 * j), 6200.0, 90.0)
 
         GivePlate(v, startPosX + (1250 * i), startPosY + (1250 * j), 6000.0)
+
+        CallRemoteEvent(v, "PlayMusicFile", "game" .. tostring(math.random(0,9)) .. ".mp3", 1)
     end
     if(gamemode.killbox ~= nil) then DestroyPickup(gamemode.killbox) end
     gamemode.killboxZ = 10.0

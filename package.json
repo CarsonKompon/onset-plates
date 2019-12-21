@@ -15,11 +15,27 @@
     "client_scripts": [
         "client/client.lua",
         "hatshop/client.lua",
-        "playermodelshop/client.lua"
+        "playermodelshop/client.lua",
+        "audio/client.lua"
     ],
     "files": [
         "gui/plates/index.html",
         "gui/plates/index.css",
-        "gui/plates/index.js"
+        "gui/plates/index.js",
+        "audio/music/freeroam0.mp3",
+        "audio/music/freeroam1.mp3",
+        "audio/music/freeroam2.mp3",
+        "audio/music/freeroam3.mp3",
+        "audio/music/game0.mp3",
+        "audio/music/game1.mp3",
+        "audio/music/game2.mp3",
+        "audio/music/game3.mp3",
+        "audio/music/game4.mp3",
+        "audio/music/game5.mp3",
+        "audio/music/game6.mp3",
+        "audio/music/game7.mp3",
+        "audio/music/game8.mp3",
+        "audio/music/game9.mp3",
+        "audio/music/gameend.mp3"
     ]
 }

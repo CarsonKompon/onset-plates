@@ -159,6 +159,8 @@ function OnGameTick(DeltaSeconds)
                     if PlayerData[v].plateScale < 0 then PlayerData[v].plateScale = 0 end
                     sx = Lerp(sx, PlayerData[v].plateScale, 0.0125)
                     SetObjectScale(PlayerData[v].plate, sx, sx, sz)
+                elseif(math.floor(sx) == 0) then
+                    DestroyPlate(v)
                 end
                 if(PlayerData[v].plateZ ~= nil) and (z ~= PlayerData[v].plateZ) then
                     z = Lerp(z, PlayerData[v].plateZ, 0.0125)

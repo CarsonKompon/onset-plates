@@ -118,14 +118,16 @@ function GameTimer()
 
     for _, v in pairs(GetAllPlayers()) do
         CallRemoteEvent(v, "plates:updateText", "header", displayText)
-        CallRemoteEvent(v, "plates:updateText", "tab1", PlayerData[v].wins .. ' Wins ')
-        CallRemoteEvent(v, "plates:updateText", "tab2", '$' .. PlayerData[v].cash)
-        CallRemoteEvent(v, "plates:updateText", "tab3",  PlayerData[v].deaths .. ' Deaths ')
-        --print(PlayerData[v].wins .. " " .. PlayerData[v].deaths .. " $" .. PlayerData[v].cash)
-        if(PlayerData[v].blind ~= nil) and (PlayerData[v].blind > 0) then
-            PlayerData[v].blind = PlayerData[v].blind - 1
-            if(PlayerData[v].blind == 0) then CallRemoteEvent(v, "plates:SetCamFade", 0.9, 0.0, 5.0)
-            else CallRemoteEvent(v, "plates:SetCamFade", 0.9, 0.9, 2.0) end
+        if(PlayerData[v] ~= nil) then
+            CallRemoteEvent(v, "plates:updateText", "tab1", PlayerData[v].wins .. ' Wins ')
+            CallRemoteEvent(v, "plates:updateText", "tab2", '$' .. PlayerData[v].cash)
+            CallRemoteEvent(v, "plates:updateText", "tab3",  PlayerData[v].deaths .. ' Deaths ')
+            --print(PlayerData[v].wins .. " " .. PlayerData[v].deaths .. " $" .. PlayerData[v].cash)
+            if(PlayerData[v].blind ~= nil) and (PlayerData[v].blind > 0) then
+                PlayerData[v].blind = PlayerData[v].blind - 1
+                if(PlayerData[v].blind == 0) then CallRemoteEvent(v, "plates:SetCamFade", 0.9, 0.0, 5.0)
+                else CallRemoteEvent(v, "plates:SetCamFade", 0.9, 0.9, 2.0) end
+            end
         end
     end
     --AddPlayerChatAll(tostring(gamemode.currentTimer))
@@ -161,6 +163,11 @@ function CheckGameOver()
         gamemode.gameStart = false
         gamemode.gameState = "INTERMISSION"
         gamemode.currentTimer = 0
+
+        for _, v in pairs(GetAllPlayers()) do
+            CallRemoteEvent(v, "PlayMusicFile", "gameend.mp3", 0)
+        end
+
         CallEvent("OnPlateGameEnd")
     end
 end

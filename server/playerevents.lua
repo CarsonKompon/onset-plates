@@ -79,6 +79,9 @@ AddEvent("OnPlayerQuit", OnPlayerQuit)
 
 function OnPlayerSpawn(player)
     --AddPlayerChat(player, "You have spawned")
+    if(gamemode.gameState ~= "INTERMISSION") then
+        CallRemoteEvent(player, "PlayMusicFile", "freeroam" .. tostring(math.random(0,3)) .. ".mp3", 0)
+    end
     PlayerData[player].blind = 0
     if (PlayerData[player].hat ~= nil) and (PlayerData[player].hat > 0) then SetPlayerHat(player) end
     CallRemoteEvent(player, "plates:ChangeCam", false)
@@ -127,7 +130,6 @@ AddEvent("OnPlayerWeaponShot", OnPlayerWeaponShot)
 function OnPlayerDamage(player, damagetype, amount)
 
 end
-
 AddEvent("OnPlayerDamage", OnPlayerDamage)
 
 
@@ -137,7 +139,6 @@ function OnPlayerChat(player, text)
         text
     ))
 end
-
 AddEvent("OnPlayerChat", OnPlayerChat)
 
 function SetPlayerHat(player)
