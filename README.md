@@ -75,6 +75,14 @@ Some common cleanup locations are:**
 
 
 
+## Events
+
+Server-Side Events:
+- `OnPlateGameStart`
+- `OnPlateGameEnd`
+
+
+
 ## Support
 - [Twitter @CarsonKompon](https://twitter.com/CarsonKompon)
 - Discord @Carson#1111

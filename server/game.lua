@@ -57,6 +57,7 @@ function GameTimer()
             --CreateWalls()
             gamemode.gameState = "IDLE"
             gamemode.currentTimer = 0
+            CallEvent("OnPlateGameStart")
         end
     elseif(gamemode.gameState == "IDLE") then
         displayText = "Next command in " .. tostring(4 - gamemode.currentTimer) .. "..."
@@ -160,5 +161,6 @@ function CheckGameOver()
         gamemode.gameStart = false
         gamemode.gameState = "INTERMISSION"
         gamemode.currentTimer = 0
+        CallEvent("OnPlateGameEnd")
     end
 end
