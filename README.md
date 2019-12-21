@@ -3,6 +3,8 @@ Plates Gamemode by Carson K. for the game [Onset](https://store.steampowered.com
 
 ![image](/screenshots/in-game.png)
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 Inspired by [Plates of Fate](https://www.roblox.com/games/564086481/Plates-of-Fate-Mayhem) and [Lab Experiment](https://www.roblox.com/games/1229173778/Lab-Experiment)
 
 **DISCLAIMER: I HAVE NOT TESTED THIS GAMEMODE IN MULTIPLAYER AS I DON'T HAVE ANYONE ELSE TO TEST WITH. EVERYTHING SHOULD WORK IN THEORY, BUT HASN'T BEEN TESTED EVER. IF YOU'RE INTERESTED IN HELPING ME TEST EVERY ONCE IN A WHILE HIT ME UP ON DISCORD**
