@@ -10,7 +10,8 @@ CREATE TABLE accounts (
     lastseen int default CURRENT_TIMESTAMP(),
     join_ip varchar(16),
     lastseen_ip varchar(16),
-	hat int default 0
+	hat int default 0,
+    outfit int default 1
 );
 CREATE TABLE kicks (
     targetid varchar(20),
