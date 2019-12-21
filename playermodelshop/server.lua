@@ -28,11 +28,11 @@ PlayerModelDealersCached = {}
 PlayerModelDealers = {
     {
         playermodels = allmodels,
-        location = {123977, 78958, 1567, 0}
+        location = {123977, 78958+100, 1567, 0}
     },
     {
         playermodels = allmodels,
-        location = {128661, 77620, 1576, 90}
+        location = {128661+150, 77620, 1576, 90}
     }
 }
 
