@@ -21,6 +21,10 @@ function OnAccountLoad(player)
         PlayerData[player].join_ip = GetPlayerIP(player)
         PlayerData[player].hat = 0
         PlayerData[player].playermodel = 1
+
+        if(tostring(GetPlayerSteamId(player)) == config.adminSteamId) then
+            PlayerData[player].privilege = 5
+        end
     else
         -- User has an account
         -- Load its data
@@ -37,6 +41,10 @@ function OnAccountLoad(player)
         PlayerData[player].lastseen_ip = result.lastseen_ip
         PlayerData[player].hat = tonumber(result.hat)
         PlayerData[player].playermodel = tonumber(result.outfit)
+    
+        if(tostring(GetPlayerSteamId(player)) == config.adminSteamId) then
+            PlayerData[player].privilege = 5
+        end
     end
 
     -- default

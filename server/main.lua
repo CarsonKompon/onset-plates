@@ -6,7 +6,7 @@
 
 config = {
     -- The SteamId64 of your Steam account
-    adminSteamId = 76561198031113835,
+    adminSteamId = "76561198031113835",
     -- MariaDB credentials
     mariadb = { host = "localhost:3306", user = "root", password = "password", database = "default" },
     -- Logging options

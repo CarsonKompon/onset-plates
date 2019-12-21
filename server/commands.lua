@@ -6,6 +6,9 @@ end
 AddCommand("kill", cmd_kmp)
 
 function cmd_effectPlate(player, effect)
+    if PlayerData[player].privilege < 4 then
+        return 0
+    end
     if(effect ~= nil) then
         AddPlayerChat(player, "Effect #" .. tostring(effect))
         EffectPlate(player, tonumber(effect))

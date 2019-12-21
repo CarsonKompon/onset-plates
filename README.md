@@ -60,7 +60,12 @@ elseif command == commandNumber then
 end
 ```
 NOTE: `commandNumber` is equal to the event's position in the `events[commandType]` table (Where `commandType` is 1 for Plate/Player Events and 2 for Game Events)
-You can test your event in-game with `/effect <commandNumber>`
+You can test your event in-game with `/effect <commandNumber>` once you add your SteamId64 to `server\main.lua` like so:
+```lua
+config = {
+    -- The SteamId64 of your Steam account
+    adminSteamId = "xxxxxxxxxxxxxxxxx",
+```
 
 
 
