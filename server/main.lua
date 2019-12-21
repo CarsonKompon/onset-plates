@@ -1,9 +1,6 @@
--- Blank onset server, written by Kaperstone
--- Onset Forums: https://forum.playonset.com/forum/onset/scripting/releases/274-base-script
--- GitHub Profile: https://github.com/kaperstone
--- GitHub Repository: https://github.com/kaperstone/blank-onset-server
+-- Plates by Carson K.
+-- Code based on the blank Onset gamemode written by Kaperstone
 
---
 
 -- Initilizing global arrays
 
