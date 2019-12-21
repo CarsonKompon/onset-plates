@@ -21,8 +21,6 @@ function OnAccountLoad(player)
         PlayerData[player].join_ip = GetPlayerIP(player)
         PlayerData[player].hat = 0
         PlayerData[player].playermodel = 1
-        PlayerData[player].clothingShirt = "Clothing/Meshes/SK_Undershirt01"
-        PlayerData[player].clothingPants = "Clothing/Meshes/SK_Shorts01"
     else
         -- User has an account
         -- Load its data
@@ -38,9 +36,7 @@ function OnAccountLoad(player)
         PlayerData[player].join_ip = result.join_ip
         PlayerData[player].lastseen_ip = result.lastseen_ip
         PlayerData[player].hat = tonumber(result.hat)
-        PlayerData[player].playermodel = tonumber(result.playermodel)
-        PlayerData[player].clothingShirt = result.clothingShirt
-        PlayerData[player].clothingPants = result.clothingPants
+        PlayerData[player].playermodel = tonumber(result.outfit)
     end
 
     -- default
@@ -65,7 +61,7 @@ function OnAccountLoad(player)
 end
 
 function SaveAccount(player)
-    local query = mariadb_prepare(db, "UPDATE accounts SET privilege = ?, playtime = ?, cash = ?, score = ?, wins = ?, deaths = ?, lastseen = ?, lastseen_ip = '?', hat = ?, playermodel = ?, clothing_shirt = '?', clothing_pants = '?' WHERE steamid = '?' LIMIT 1",
+    local query = mariadb_prepare(db, "UPDATE accounts SET privilege = ?, playtime = ?, cash = ?, score = ?, wins = ?, deaths = ?, lastseen = ?, lastseen_ip = '?', hat = ?, outfit = ? WHERE steamid = '?' LIMIT 1",
         PlayerData[player].privilege,
         PlayerData[player].playtime,
         PlayerData[player].cash,
@@ -76,8 +72,6 @@ function SaveAccount(player)
         "127.0.0.1", --GetPlayerIP(player),
         PlayerData[player].hat,
         PlayerData[player].playermodel,
-        PlayerData[player].clothingShirt,
-        PlayerData[player].clothingPants,
         tostring(GetPlayerSteamId(player))
     )
     mariadb_async_query(db, query)
