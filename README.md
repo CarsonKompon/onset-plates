@@ -26,7 +26,6 @@ Inspired by [Plates of Fate](https://www.roblox.com/games/564086481/Plates-of-Fa
 ## Adding Custom Events
 In `server\effects.lua` add a new event to it's respective list. Give it a unique name, or just use a number that hasn't been used yet
 ```lua
-_("plate_event_22"),
 _("plate_event_custom")
 ```
 
