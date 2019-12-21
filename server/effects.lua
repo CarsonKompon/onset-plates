@@ -1,31 +1,33 @@
+local _ = function(k,...) return ImportPackage("i18n").t(GetPackageName(),k,...) end
+
 events = {
     { --Plate/Player Events
-        " Plate(s) will slightly grow in ",
-        " Plate(s) will slightly shrink in ",
-        " Plate(s) will grow in ",
-        " Plate(s) will shrink in ",
-        " Plate(s) will start spinning in ",
-        " Plate(s) will receive a new ladder in ",
-        " Plate(s) will be fenced off in ",
-        " Plate(s) will become toxic in ",
-        " Player(s) will become big brain in ",
-        " Player(s) will receive a pistol with 1 bullet in ",
-        " Player(s) will gain 50 Armour in ",
-        " Plate(s) will raise in ",
-        " Plate(s) will lower in ",
-        " Player(s) will be put in First Person in ",
-        " Plate(s) will receive a landmine in ",
-        " Plate(s) will get crushed by a car in ",
-        " Plate(s) will shrink in half in ",
-        " Plate(s) will start to shrink indefinitely in ",
-        " Plate(s) will start to grow indefinitely in ",
-        " Plate(s) will return to normal in ",
-        " Player(s) vision will go dark for 1 minute in ",
-        " Plate(s) will recieve a spinning death bar in "
+        _("plate_event_1"),
+        _("plate_event_2"),
+        _("plate_event_3"),
+        _("plate_event_4"),
+        _("plate_event_5"),
+        _("plate_event_6"),
+        _("plate_event_7"),
+        _("plate_event_8"),
+        _("plate_event_9"),
+        _("plate_event_10"),
+        _("plate_event_11"),
+        _("plate_event_12"),
+        _("plate_event_13"),
+        _("plate_event_14"),
+        _("plate_event_15"),
+        _("plate_event_16"),
+        _("plate_event_17"),
+        _("plate_event_18"),
+        _("plate_event_19"),
+        _("plate_event_20"),
+        _("plate_event_21"),
+        _("plate_event_22")
     },
     { --Game Events
-        "The Killbox will rise in ",
-        "A safe place will appear in "
+        _("game_event_1"),
+        _("game_event_2")
     }
 }
 

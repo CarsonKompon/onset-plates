@@ -30,7 +30,7 @@ function OnAccountLoad(player)
 
         PlayerData[player].privilege = tonumber(result.privilege)
         PlayerData[player].playtime = tonumber(result.playtime)
-        PlayerData[player].cash = 9999999--tonumber(result.cash)
+        PlayerData[player].cash = tonumber(result.cash)
         PlayerData[player].score = tonumber(result.score)
         PlayerData[player].wins = tonumber(result.wins)
         PlayerData[player].deaths = tonumber(result.deaths)
