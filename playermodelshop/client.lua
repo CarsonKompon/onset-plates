@@ -16,7 +16,7 @@ function OnKeyPress(key)
     if key == "E" then
         local NearestModelShop = GetNearestModelShop()
         if NearestModelShop ~= 0 then
-            AddPlayerChat("interacted")
+            --AddPlayerChat("interacted")
             CallRemoteEvent("playermodelshop:Interact", NearestModelShop)
         end
     end
