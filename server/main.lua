@@ -227,7 +227,7 @@ end
 AddEvent("OnPlayerServerAuth", OnPlayerServerAuth)
 
 function OnPlayerSteamAuth(player)
-    AddPlayerChat(player, "Your SteamId: "..GetPlayerSteamId(player))
+    --AddPlayerChat(player, "Your SteamId: "..GetPlayerSteamId(player))
 
     local query = mariadb_prepare(db, "SELECT * FROM accounts WHERE steamid = '?' LIMIT 1", tostring(GetPlayerSteamId(player)))
     mariadb_async_query(db, query, OnAccountLoad, player)
