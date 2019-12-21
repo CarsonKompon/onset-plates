@@ -117,9 +117,9 @@ function GameTimer()
 
     for _, v in pairs(GetAllPlayers()) do
         CallRemoteEvent(v, "plates:updateText", "header", displayText)
-        CallRemoteEvent(v, "plates:updateText", "tab1", '<i class="fas fa-trophy"></i> ' .. PlayerData[v].wins .. ' Wins ')
-        CallRemoteEvent(v, "plates:updateText", "tab2", '<i class="fas fa-money-bill-alt"></i> $' .. PlayerData[v].cash)
-        CallRemoteEvent(v, "plates:updateText", "tab3", '<i class="fas fa-skull"></i> ' .. PlayerData[v].deaths .. ' Deaths ')
+        CallRemoteEvent(v, "plates:updateText", "tab1", PlayerData[v].wins .. ' Wins ')
+        CallRemoteEvent(v, "plates:updateText", "tab2", '$' .. PlayerData[v].cash)
+        CallRemoteEvent(v, "plates:updateText", "tab3",  PlayerData[v].deaths .. ' Deaths ')
         --print(PlayerData[v].wins .. " " .. PlayerData[v].deaths .. " $" .. PlayerData[v].cash)
         if(PlayerData[v].blind ~= nil) and (PlayerData[v].blind > 0) then
             PlayerData[v].blind = PlayerData[v].blind - 1
