@@ -23,7 +23,8 @@ events = {
         _("plate_event_19"),
         _("plate_event_20"),
         _("plate_event_21"),
-        _("plate_event_22")
+        _("plate_event_22"),
+        _("plate_event_23")
     },
     { --Game Events
         _("game_event_1"),
@@ -130,6 +131,8 @@ function EffectPlate(player, command)
         SetPickupScale(PlayerData[player].firebar, 1, 10, 1)
         SetPickupPropertyValue(PlayerData[player].firebar, "type", "firebar", true)
         SetPickupPropertyValue(PlayerData[player].firebar, "player", player, true)
+    elseif command == 23 then
+        SetPlayerWeapon(player, 21, 1, true, 1, true)
     end
 
 end
