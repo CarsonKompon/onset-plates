@@ -20,7 +20,9 @@ function GameTimer()
                 PlayerData[gamemode.lastWinner].cash = PlayerData[gamemode.lastWinner].cash + gamemode.winReward
                 PlayerData[gamemode.lastWinner].wins = PlayerData[gamemode.lastWinner].wins + 1
             end
-            displayText = "WINNER: " .. GetPlayerName(gamemode.lastWinner) .. "! Reward: $" .. tostring(gamemode.winReward)
+            if(gamemode.lastWinner > 0) then
+                displayText = "WINNER: " .. GetPlayerName(gamemode.lastWinner) .. "! Reward: $" .. tostring(gamemode.winReward)
+            end
         else
             if(gamemode.ingame ~= nil) and (#gamemode.ingame > 0) then
                 for _, v in pairs(gamemode.ingame) do
