@@ -1,6 +1,6 @@
 {
     "author": "CarsonK",
-    "version": "0.1",
+    "version": "0.2",
     "server_scripts": [
         "server/effects.lua",
         "server/main.lua",
