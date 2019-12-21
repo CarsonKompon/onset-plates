@@ -147,6 +147,9 @@ AddEvent("OnPlayerChat", OnPlayerChat)
 
 function SetPlayerHat(player)
     local hat = PlayerData[player].hat
+    if PlayerData[player].hatobj ~= nil then
+        DestroyObject(PlayerData[player].hatobj)
+    end
     if hat > 0 then
         local xx, yy, zz = GetPlayerLocation(player)
         PlayerData[player].hatobj = CreateObject(hat,xx,yy,zz)
