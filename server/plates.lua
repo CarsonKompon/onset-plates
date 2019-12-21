@@ -8,7 +8,8 @@ function SpawnPlates()
     for k=1, 49 do
         table.insert( possibleSpot, k)
     end
-    for _, v in pairs(GetAllPlayers()) do
+    for k, v in pairs(GetAllPlayers()) do
+        gamemode.ingame[k] = v
         i = possibleSpot[math.random(1,#possibleSpot)]
         j = 1
         local p = i
@@ -23,7 +24,8 @@ function SpawnPlates()
             j = j + 1
         end
         SetPlayerLocation(v, startPosX + (1250 * i), startPosY + (1250 * j), 6200.0, 90.0)
-
+        SetPlayerHealth(v, 100)
+        
         GivePlate(v, startPosX + (1250 * i), startPosY + (1250 * j), 6000.0)
 
         CallRemoteEvent(v, "PlayMusicFile", "game" .. tostring(math.random(0,9)) .. ".mp3", 1)
@@ -56,6 +58,8 @@ function CreateWalls()
 end
 
 function GivePlate(player, x, y, z)
+    if(PlayerData[player].plate ~= nil) then DestroyObject(PlayerData[player].plate) end
+    if(PlayerData[player].plateText ~= nil) then DestroyText3D(PlayerData[player].plateText) end
     PlayerData[player].plate = CreateObject(3, x, y, z)
     PlayerData[player].plateText = CreateText3D(GetPlayerName(player) .. "'s Plate", 17, x, y, z+260, 0, 0, 0)
     --SetText3DAttached(PlayerData[player].plateText, 3, PlayerData[player].plate, x, y, z+130)

@@ -3,15 +3,18 @@ local LastSoundPlayed = 0
 
 local musicState = 0
 
-function PlaySoundFile(file, state)
+function PlaySoundFile(file)
 	DestroySound(LastSoundPlayed)
 
 	LastSoundPlayed = CreateSound("audio/sounds/"..file)
     SetSoundVolume(LastSoundPlayed, 1.0)
-    
-    musicState = state
 end
 AddRemoteEvent("PlaySoundFile", PlaySoundFile)
+
+function PlaySoundFile3D(file, x, y, z, r)
+	CreateSound3D("audio/sounds/"..file, x, y, z, r)
+end
+AddRemoteEvent("PlaySoundFile3D", PlaySoundFile3D)
 
 function PlayMusicFile(file, state)
 	DestroySound(LastSongPlayed)

@@ -53,7 +53,6 @@ function GameTimer()
     elseif(gamemode.gameState == "STARTING") then
         displayText = "Game starting in " .. tostring(6 - gamemode.currentTimer) .. "..."
         if(gamemode.currentTimer >= 5) then
-            gamemode.ingame = GetAllPlayers()
             gamemode.gameStart = true
             SpawnPlates()
             --CreateWalls()
@@ -92,6 +91,9 @@ function GameTimer()
             gamemode.gameState = "EFFECT"
             gamemode.currentTimer = 0
         end
+        for _, v in pairs(gamemode.ingame) do
+            CallRemoteEvent(v, "PlaySoundFile", "timer.mp3")
+        end
     elseif(gamemode.gameState == "EFFECT") then
         displayText = "Effected players: "
         for _, v in pairs(gamemode.ingame) do
@@ -104,6 +106,12 @@ function GameTimer()
         end
         if(gamemode.currentTimer == 1) and gamemode.effected ~= nil then
             for _, v in pairs(gamemode.effected) do
+                local vx, vy, vz = GetObjectLocation(PlayerData[v].plate)
+                
+                for kk, vv in pairs(gamemode.ingame) do
+                    CallRemoteEvent(v, "PlaySoundFile3D", "effect.mp3", vx, vy, vz, 500)
+                end
+                
                 if(PlayerData[v].plate ~= nil) then
                     if(gamemode.commandType == 1) then EffectPlate(v,gamemode.command)
                     else EffectGame(gamemode.command) end
@@ -113,8 +121,10 @@ function GameTimer()
         end
         if(gamemode.currentTimer >= 3) then
             gamemode.effected = nil
-            gamemode.gameState = "IDLE"
+            gamemode.gameState = "COMMANDING"
             gamemode.currentTimer = 0
+            gamemode.commands = events[gamemode.commandType]
+            gamemode.command = math.random(1, #gamemode.commands)
         end
     end
 
@@ -162,6 +172,9 @@ function CheckGameOver()
             end
         end
         if count <= 1 then
+            if count > 0 then
+                gamemode.lastWinner = gamemode.ingame[1]
+            end
             gamemode.ingame = {}
             gamemode.gameStart = false
             gamemode.gameState = "INTERMISSION"

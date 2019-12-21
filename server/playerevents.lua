@@ -73,6 +73,11 @@ function OnPlayerQuit(player)
     DestroyPlate(player)
     --PlayerData[player] = nil
 
+    if(PlayerData[player].hatobj ~= nil) then
+        DestroyObject(PlayerData[player].hatobj)
+        PlayerData[player].hatobj = nil
+    end
+
     CheckGameOver()
 end
 AddEvent("OnPlayerQuit", OnPlayerQuit)

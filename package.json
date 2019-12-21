@@ -36,6 +36,8 @@
         "audio/music/game7.mp3",
         "audio/music/game8.mp3",
         "audio/music/game9.mp3",
-        "audio/music/gameend.mp3"
+        "audio/music/gameend.mp3",
+        "audio/sounds/timer.mp3",
+        "audio/sounds/effect.mp3"
     ]
 }
