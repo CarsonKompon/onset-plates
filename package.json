@@ -9,12 +9,10 @@
         "server/commands.lua",
         "server/accounts.lua",
         "server/playerevents.lua",
-        "server/scoreboard.lua",
         "hatshop/server.lua",
         "playermodelshop/server.lua"
     ],
     "client_scripts": [
-        "client/scoreboard.lua",
         "client/client.lua",
         "hatshop/client.lua",
         "playermodelshop/client.lua"
@@ -22,12 +20,6 @@
     "files": [
         "gui/plates/index.html",
         "gui/plates/index.css",
-        "gui/plates/index.js",
-        "gui/scoreboard/scoreboard.html",
-        "gui/scoreboard/scoreboard.css",
-        "gui/scoreboard/scoreboard.js",
-        "gui/scoreboard/jquery.js",
-        "gui/scoreboard/xbbcode.js",
-        "gui/scoreboard/xbbcode.css"
+        "gui/plates/index.js"
     ]
 }
