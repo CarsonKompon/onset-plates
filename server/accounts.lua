@@ -1,6 +1,6 @@
 function OnAccountLoad(player)
     -- If account exists
-    AddPlayerChat(player, "authed")
+    --AddPlayerChat(player, "authed")
     if(mariadb_get_row_count() == 0) then
         -- User doesn't exist
         -- Create a new account automatically

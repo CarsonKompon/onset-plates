@@ -65,7 +65,7 @@ function OnPlayerQuit(player)
     torem = nil
     for i, v in pairs(gamemode.ingame) do
         if(GetPlayerSteamId(v) == GetPlayerSteamId(player)) then
-            AddPlayerChatAll("Removal")
+            --AddPlayerChatAll("Removal")
             torem = i
         end
     end
@@ -78,7 +78,7 @@ end
 AddEvent("OnPlayerQuit", OnPlayerQuit)
 
 function OnPlayerSpawn(player)
-    AddPlayerChat(player, "You have spawned")
+    --AddPlayerChat(player, "You have spawned")
     PlayerData[player].blind = 0
     if (PlayerData[player].hat ~= nil) and (PlayerData[player].hat > 0) then SetPlayerHat(player) end
     CallRemoteEvent(player, "plates:ChangeCam", false)
@@ -101,7 +101,7 @@ function OnPlayerDeath(player, killer)
     torem = nil
     for i, v in pairs(gamemode.ingame) do
         if(GetPlayerSteamId(v) == GetPlayerSteamId(player)) then
-            AddPlayerChatAll("Removal")
+            --AddPlayerChatAll("Removal")
             torem = i
         end
     end

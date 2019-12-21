@@ -80,7 +80,7 @@ AddRemoteEvent("playermodelshop:Open", function(lmodels)
 end)
 
 AddRemoteEvent("player:SetPlayerModel", function(modelid)
-    AddPlayerChat("set that bitch")
+    --AddPlayerChat("set that bitch")
     local SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(GetPlayerId(), "Body")
     SkeletalMeshComponent:SetSkeletalMesh(USkeletalMesh.LoadFromAsset("/Game/CharacterModels/" .. modelid))
     SkeletalMeshComponent:SetMaterial(3, UMaterialInterface.LoadFromAsset("/Game/CharacterModels/Materials/HZN_Materials/M_HZN_Body_NoShoesLegsTorso"))

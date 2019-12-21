@@ -50,7 +50,7 @@ AddEvent("OnPlayerJoin", function(player)
 end)
 
 AddRemoteEvent("playermodelshop:Interact", function(player, playermodelobject)
-    print("interact")
+    --print("interact")
     local modelshop = GetPlayerModelByObject(playermodelobject)
     if modelshop then
         local x, y, z = GetNPCLocation(modelshop.npc)
@@ -59,7 +59,7 @@ AddRemoteEvent("playermodelshop:Interact", function(player, playermodelobject)
         if dist < 200 then
             for k, v in pairs(PlayerModelDealers) do
                 if playermodelobject == v.npc then
-                    print("open shop")
+                    --print("open shop")
                     CallRemoteEvent(player, "playermodelshop:Open", v.playermodels)
                 end
             end
@@ -92,7 +92,7 @@ AddRemoteEvent("playermodelshop:Purchase", function(player, modelid, playermodel
     local name = _(modelid)
     local price = GetModelPrice(modelid, playermodelobject)
     local modelid = GetModelPath(modelid)
-    print(modelid)
+    --print(modelid)
 
     if tonumber(price) > PlayerData[player].cash then
         AddPlayerChat(player, _("no_money"))

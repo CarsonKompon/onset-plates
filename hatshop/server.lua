@@ -95,7 +95,7 @@ AddRemoteEvent("hatshop:Purchase", function(player, modelid, hatshopobject)
     local name = _(modelid)
     local price = GetHatPrice(modelid, hatshopobject)
     local modelid = GetHatId(modelid)
-    print(modelid)
+    --print(modelid)
 
     if tonumber(price) > PlayerData[player].cash then
         AddPlayerChat(player, _("no_money"))
