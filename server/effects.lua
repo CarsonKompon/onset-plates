@@ -24,7 +24,8 @@ events = {
         _("plate_event_20"),
         _("plate_event_21"),
         _("plate_event_22"),
-        _("plate_event_23")
+        _("plate_event_23"),
+        _("plate_event_24")
     },
     { --Game Events
         _("game_event_1"),
@@ -133,8 +134,26 @@ function EffectPlate(player, command)
         SetPickupPropertyValue(PlayerData[player].firebar, "player", player, true)
     elseif command == 23 then
         SetPlayerWeapon(player, 21, 1, true, 1, true)
+    elseif command == 24 then
+        local x2, y2, z2
+        if(#gamemode.ingame > 1) then
+            local other
+            repeat
+                other = gamemode.ingame[math.random(1,#gamemode.ingame)]
+            until other ~= player
+            x2, y2, z2 = GetObjectLocation(PlayerData[other].plate)
+        else
+            x2 = 135773.0 + (1250 * 4.5)
+            y2 = 80246.0 + (1250 * 4.5)
+            z2 = 6000.0
+        end
+        local xDif = x2 - x
+        local yDif = y2 - y
+        local zDif = z2 - z
+        local dist = GetDistance3D(x, y, z, x2, y2, z2)
+        table.insert( gamemode.gameObjs, 
+        CreateObject(1, x+(xDif/2), y+(yDif/2), z+(zDif/2), 0, atan2( y2 - y, x2 - x), 0, dist/75, 2, 0.25))   
     end
-
 end
 
 function EffectGame(command)
@@ -143,6 +162,19 @@ function EffectGame(command)
     if command == 1 then
         gamemode.killboxZ = gamemode.killboxZ + 6
     elseif command == 2 then
-        table.insert( gamemode.safePlates, CreateObject(3, 125773.0 + math.random(1250 * 8), 80246.0 + math.random(1250 * 8), 5850.0) )
+        table.insert( gamemode.safePlates, CreateObject(3, 125773.0 + math.random(0,1250 * 8), 80246.0 + math.random(0,1250 * 8), 5850.0) )
     end
+end
+
+function atan2(x, y)
+    if x == 0 and y == 0 then
+        result = 0
+    else
+        offset = 0
+        if x < 0 then
+            offset = math.pi
+        end
+        result = math.atan(y/x) + offset
+    end
+    return result
 end

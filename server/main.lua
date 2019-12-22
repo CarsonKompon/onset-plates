@@ -48,7 +48,8 @@ gamemode = {
     wall2 = nil,
     wall3 = nil,
     wall4 = nil,
-    safePlates = {}
+    safePlates = {},
+    gameObjs = {}
 }
 
 function FindObject(propname, propvalue)
